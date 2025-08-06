@@ -34,3 +34,9 @@ application:
     jwt:
       secret-key: gFWqqKsp
       expiration: 864000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+
+server:
+  port: 8088
