@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ed96b3ee-652b-4e29-8b2c-fbcde0ed08e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/email/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NasMaizi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NasMaizi/Full-stack-Book-Management.git&quot;,
+    &quot;accountId&quot;: &quot;a410cc81-da7f-49e3-8775-1d9bbe557616&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="30spLXP3eEOXKVWa6wM4rmAB6I9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nasre/Documents/Workspace/book-social-network",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nasro.book.email" />
+      <recent name="com.nasro.book.auth" />
+      <recent name="com.nasro.book.security" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BookNetworkBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="book-network" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nasro.book.BookNetworkBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ed96b3ee-652b-4e29-8b2c-fbcde0ed08e1" name="Changes" comment="" />
+      <created>1754426078810</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754426078810</updated>
+      <workItem from="1754426080003" duration="2458000" />
+      <workItem from="1754474303217" duration="12506000" />
+      <workItem from="1754498575947" duration="3664000" />
+    </task>
+    <task id="LOCAL-00001" summary="Infrastructure with Docker and Implementing Spring Security for custom user">
+      <option name="closed" value="true" />
+      <created>1754496407715</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1754496407715</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Infrastructure with Docker and Implementing Spring Security for custom user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Infrastructure with Docker and Implementing Spring Security for custom user" />
+  </component>
+</project>

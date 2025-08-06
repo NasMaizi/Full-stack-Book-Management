@@ -1,0 +1,199 @@
+Index: book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.nasro.book.auth;\r\n\r\nimport org.springframework.stereotype.Service;\r\n\r\n@Service\r\npublic class AuthenticationService {\r\n    public void register(RegistrationRequest request) {\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java b/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java
+--- a/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java	(revision 16d2cb175c4f43ee5251f7155fd10e5e04be086c)
++++ b/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java	(date 1754500208215)
+@@ -1,9 +1,71 @@
+ package com.nasro.book.auth;
+ 
++import com.nasro.book.email.EmailService;
++import com.nasro.book.role.RoleRepository;
++import com.nasro.book.user.Token;
++import com.nasro.book.user.TokenRepository;
++import com.nasro.book.user.User;
++import com.nasro.book.user.UserRepository;
++import lombok.RequiredArgsConstructor;
++import org.springframework.security.crypto.password.PasswordEncoder;
+ import org.springframework.stereotype.Service;
+ 
++import java.security.SecureRandom;
++import java.time.LocalDateTime;
++import java.util.List;
++
+ @Service
++@RequiredArgsConstructor
+ public class AuthenticationService {
++    private final RoleRepository roleRepository;
++    private final PasswordEncoder passwordEncoder;
++    private final UserRepository userRepository;
++    private final TokenRepository tokenRepository;
++    private final EmailService emailService;
++
+     public void register(RegistrationRequest request) {
++        var userRole = roleRepository.findByName("USER")
++                //todo - better exception Handling
++                .orElseThrow(() -> new IllegalStateException("ROLE USER was not initialized"));
++        var user = User.builder()
++                .firstname(request.firstname())
++                .lastname(request.lastname())
++                .email(request.email())
++                .password(passwordEncoder.encode(request.password()))
++                .accountLocked(false)
++                .enabled(false)
++                .roles(List.of(userRole))
++                .build();
++        userRepository.save(user);
++        sendValidationEmail(user);
++    }
++
++    private void sendValidationEmail(User user) {
++        var newToken = generateAndSaveActivationToken(user);
++        // send email
++    }
++
++    private String generateAndSaveActivationToken(User user) {
++        //generate a token
++        String generatedToken = generateAtivationCode(6);
++        var token = Token.builder()
++                .token(generatedToken)
++                .createdAt(LocalDateTime.now())
++                .expiresAt(LocalDateTime.now().plusMinutes(15))
++                .user(user)
++                .build();
++        tokenRepository.save(token);
++        return generatedToken;
++    }
++
++    private String generateAtivationCode(int length) {
++        String characters = "0123456789";
++        StringBuilder codeBuilder =new StringBuilder();
++        SecureRandom secureRandom = new SecureRandom();
++        for (int i = 0; i < length; i++) {
++            int randomIndex = secureRandom.nextInt(characters.length());
++            codeBuilder.append(characters.charAt(secureRandom.nextInt(characters.length())));
++        }
++        return codeBuilder.toString();
+     }
+ }
+Index: book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.nasro.book;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport org.springframework.data.jpa.repository.config.EnableJpaAuditing;\r\n\r\n@SpringBootApplication\r\n@EnableJpaAuditing\r\npublic class BookNetworkBackendApplication {\r\n\r\n    public static void main(String[] args) {\r\n        SpringApplication.run(BookNetworkBackendApplication.class, args);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java b/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java
+--- a/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java	(revision 16d2cb175c4f43ee5251f7155fd10e5e04be086c)
++++ b/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java	(date 1754501018081)
+@@ -3,9 +3,11 @@
+ import org.springframework.boot.SpringApplication;
+ import org.springframework.boot.autoconfigure.SpringBootApplication;
+ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
++import org.springframework.scheduling.annotation.EnableAsync;
+ 
+ @SpringBootApplication
+ @EnableJpaAuditing
++@EnableAsync
+ public class BookNetworkBackendApplication {
+ 
+     public static void main(String[] args) {
+Index: book-network-backend/src/main/java/com/nasro/book/email/EmailService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/book-network-backend/src/main/java/com/nasro/book/email/EmailService.java b/book-network-backend/src/main/java/com/nasro/book/email/EmailService.java
+new file mode 100644
+--- /dev/null	(date 1754501018075)
++++ b/book-network-backend/src/main/java/com/nasro/book/email/EmailService.java	(date 1754501018075)
+@@ -0,0 +1,63 @@
++package com.nasro.book.email;
++
++import jakarta.mail.MessagingException;
++import jakarta.mail.internet.MimeMessage;
++import lombok.RequiredArgsConstructor;
++import org.springframework.mail.javamail.JavaMailSender;
++import org.springframework.mail.javamail.MimeMessageHelper;
++import org.springframework.scheduling.annotation.Async;
++import org.springframework.stereotype.Service;
++import org.thymeleaf.context.Context;
++import org.thymeleaf.spring6.SpringTemplateEngine;
++
++import java.nio.charset.StandardCharsets;
++import java.util.HashMap;
++import java.util.Map;
++
++import static java.nio.charset.StandardCharsets.UTF_8;
++import static org.springframework.mail.javamail.MimeMessageHelper.MULTIPART_MODE_MIXED;
++
++@Service
++@RequiredArgsConstructor
++public class EmailService {
++    private final JavaMailSender mailSender;
++    private final SpringTemplateEngine templateEngine;
++
++
++    @Async
++    public void sendEmail(
++            String to,
++            String username,
++            EmailTemplateName emailTemplate,
++            String confirmationUrl,
++            String activationCode,
++            String subject
++    ) throws MessagingException {
++        String templateName;
++        if(emailTemplate == null){
++            templateName = "confirm-email";
++        }else{
++            templateName = emailTemplate.name();
++        }
++        MimeMessage mimeMessage = mailSender.createMimeMessage();
++        MimeMessageHelper helper = new MimeMessageHelper(
++                mimeMessage,
++                MULTIPART_MODE_MIXED,
++                UTF_8.name()
++        );
++        Map<String,Object> properties = new HashMap<>();
++        properties.put("username", username);
++        properties.put("activation_code", activationCode);
++        properties.put("confirmationUrl", confirmationUrl);
++
++        Context context = new Context();
++        context.setVariables(properties);
++        helper.setFrom("contact@nasro.com");
++        helper.setTo(to);
++        helper.setSubject(subject);
++
++        String template = templateEngine.process(templateName, context);
++        helper.setText(template, true);
++        mailSender.send(mimeMessage);
++    }
++}
+Index: book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java b/book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java
+new file mode 100644
+--- /dev/null	(date 1754500437893)
++++ b/book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java	(date 1754500437893)
+@@ -0,0 +1,12 @@
++package com.nasro.book.email;
++
++import lombok.Getter;
++
++@Getter
++public enum EmailTemplateName {
++    ACTIVATE_ACCOUNT("activate_account");
++    private final String name;
++    EmailTemplateName(String name) {
++        this.name = name;
++    }
++}
