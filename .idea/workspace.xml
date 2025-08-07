@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed96b3ee-652b-4e29-8b2c-fbcde0ed08e1" name="Changes" comment="">
+    <list default="true" id="ed96b3ee-652b-4e29-8b2c-fbcde0ed08e1" name="Changes" comment="resolve issues">
       <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/email/EmailService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java" afterDir="false" />
     </list>
@@ -68,6 +70,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.language",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -112,7 +118,8 @@
       <updated>1754426078810</updated>
       <workItem from="1754426080003" duration="2458000" />
       <workItem from="1754474303217" duration="12506000" />
-      <workItem from="1754498575947" duration="3664000" />
+      <workItem from="1754498575947" duration="3927000" />
+      <workItem from="1754502996911" duration="896000" />
     </task>
     <task id="LOCAL-00001" summary="Infrastructure with Docker and Implementing Spring Security for custom user">
       <option name="closed" value="true" />
@@ -122,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754496407715</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="resolve issues">
+      <option name="closed" value="true" />
+      <created>1754502798396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1754502798396</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +156,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Infrastructure with Docker and Implementing Spring Security for custom user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Infrastructure with Docker and Implementing Spring Security for custom user" />
+    <MESSAGE value="resolve issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve issues" />
   </component>
 </project>
