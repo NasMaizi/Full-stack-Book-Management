@@ -1,5 +1,6 @@
 package com.nasro.book.book;
 
+import com.nasro.book.file.FileUtils;
 import com.nasro.book.history.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ public class BookMapper {
                 .shareable(book.isShareable())
                 .rate(book.getRate())
                 .owner(book.getOwner().fullName())
-                //.cover()
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
                 .build();
     }
 

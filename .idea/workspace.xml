@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed96b3ee-652b-4e29-8b2c-fbcde0ed08e1" name="Changes" comment="resolve issues">
-      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/email/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/email/EmailTemplateName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/config/OpenApiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/feedback/FeedBackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/feedback/FeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/feedback/FeedbackMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/feedback/FeedbackRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/feedback/FeedbackRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/feedback/FeedbackResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/file/FileStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/file/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_6_2025_7_24_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_6_2025_7_24_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/BookNetworkBackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/auth/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/java/com/nasro/book/book/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-backend/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +34,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Record" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -47,6 +60,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -55,38 +71,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nasre/Documents/Workspace/book-social-network",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.language",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.book-network [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-network [clean].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BookNetworkBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nasre/Documents/Workspace/book-social-network&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nasro.book.feedback" />
       <recent name="com.nasro.book.email" />
       <recent name="com.nasro.book.auth" />
       <recent name="com.nasro.book.security" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nasre\Documents\Workspace\book-social-network" />
     </key>
   </component>
   <component name="RunManager">
@@ -120,6 +147,11 @@
       <workItem from="1754474303217" duration="12506000" />
       <workItem from="1754498575947" duration="3927000" />
       <workItem from="1754502996911" duration="896000" />
+      <workItem from="1758115669659" duration="441000" />
+      <workItem from="1758116409529" duration="6676000" />
+      <workItem from="1758201295490" duration="124000" />
+      <workItem from="1758274503347" duration="961000" />
+      <workItem from="1759060926549" duration="3960000" />
     </task>
     <task id="LOCAL-00001" summary="Infrastructure with Docker and Implementing Spring Security for custom user">
       <option name="closed" value="true" />
